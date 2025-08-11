@@ -1,8 +1,9 @@
 services:
   - type: web
     name: laravel-app
-    runtime: docker
+    env: docker
     plan: free
+    dockerfilePath: Dockerfile
     envVars:
       - key: APP_ENV
         value: production
@@ -11,11 +12,11 @@ services:
       - key: APP_DEBUG
         value: "false"
       - key: APP_URL
-        value: ettijohn.42web.io
+        value: https://ettijohn.42web.io
       - key: DB_CONNECTION
         value: mysql
       - key: DB_HOST
-        value: 127.0.0.1
+        value: ""   # Change to your Render MySQL service name
       - key: DB_PORT
         value: 3306
       - key: DB_DATABASE
@@ -24,5 +25,3 @@ services:
         value: root
       - key: DB_PASSWORD
         value: ""
-
-
